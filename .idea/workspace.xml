@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0b4f155-416c-4cdd-a085-7eed45dae971" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/demo/images/chenli.html" afterPath="" />
-    </list>
+    <list default="true" id="b0b4f155-416c-4cdd-a085-7eed45dae971" name="Default" comment="" />
     <ignored path="Monkeytricks.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,7 +26,7 @@
       <file leaf-file-name="chenli.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chenli.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-156">
+            <state relative-caret-position="156">
               <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
               <folding />
             </state>
@@ -197,12 +195,12 @@
       <workItem from="1487595309965" duration="2137000" />
       <workItem from="1487645513666" duration="3044000" />
       <workItem from="1487652879905" duration="612000" />
-      <workItem from="1487739837126" duration="15467000" />
+      <workItem from="1487739837126" duration="16063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25062000" />
+    <option name="totallyTimeSpent" value="25658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="54" y="-8" width="1874" height="1096" extended-state="7" />
@@ -361,7 +359,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chenli.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-156">
+        <state relative-caret-position="156">
           <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
           <folding />
         </state>
