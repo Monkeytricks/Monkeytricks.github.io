@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p {
+            text-align: center;
+        }
+        #contianer {
+            position: relative;
+            width: 1000px;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid #999;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #contianer div {
+            position: absolute;
+        }
+        #txt {
+            width: 300px;
+            padding: 5px;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+        .btn {
+            padding: 5px 30px;
+            background: #fff;
+            border: 1px solid #999;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="contianer">
+</div>
+<p><input type="text" id="txt"></p>
+<p>
+    <button id="pop" class="btn">发射</button>
+    <button id="clearPop" class="btn">清屏</button>
+</p>
+<script>
+    var ctn = document.getElementById('contianer');
+    var txt = document.getElementById('txt');
+    var pop = document.getElementById('pop');
+    var clear = document.getElementById('clearPop');
+
+    pop.onclick = function(){
+        if(txt.value != ''){
+            var oDiv = document.createElement('div');
+            oDiv.style.left = getComputedStyle(ctn).width;
+            oDiv.innerHTML = txt.value;
+            ctn.appendChild(oDiv);
+            oDiv.times = 100;
+            move(oDiv);
+        }
+    }
+    function move(obj){
+        obj.timer = setInterval(function(){
+            obj.style.left = parseInt(obj.style.left) - 1 + 'px';
+            if(obj.times>10) obj.times-=2;
+            clearInterval(obj.timer);
+            move(obj);
+        },obj.times);
+    }
+    clear.onclick = function(){
+        ctn.innerHTML = '';
+    }
+</script>
+</body>
+</html>
