@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            /*background: #000;*/
+        }
+        #main{
+            position:relative;
+        }
+        .bg{
+            position:absolute;
+            top:0;
+            left:0;
+            height:300px;
+            width:100%;
+            background:#547061;
+        }
+        .wrap{
+            position:absolute;
+            top:150px;
+            left:calc(50% - 455px);
+            
+            width:910px;
+            /*background: #fff;*/
+        }
+        .nav{
+            position: absolute;
+            top:0;
+            left:calc(50% - 125px);
+            height:250px;
+            width:250px;
+            border:10px solid #fff;
+
+            border-radius: 50%;
+            background:#7c8ca3;
+        }
+        .line{
+            position: absolute;
+            top:300px;
+            left:calc(50% - 7px);
+            height:3000px;
+            width:8px;
+            background: #fff;
+            border:7px solid #eee;
+            border-radius: 20px;
+        }
+        .point{
+            position: absolute;
+            left:calc(50% - 10px);
+            width:10px;
+            height:10px;
+            border:5px solid #fff;
+            border-radius:50%;
+            background:#eee;
+        }
+        .point:hover{
+            cursor:pointer;
+            background:#7c8ca3;
+        }
+        .item6{
+            top:-6px;
+        }
+        .item5{
+            top:300px;
+        }
+        .item4{
+            top:500px;
+        }
+        .item3{
+            top:850px;
+        }
+        .item2{
+            top:1500px;
+        }
+        .item1{
+            top:2000px;
+        }
+        .item0{
+            top:2600px;
+        }
+        .item6-content{
+            height:130px;
+            width:400px;
+            background:#eee;
+            position: absolute;
+            top:300px;
+            left:500px;
+            border-radius:0 30px ;
+        }
+        .item6-content img{
+            border-radius:0 0 0 30px;
+            border-right:3px solid #fff;
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .item6-content-r{
+            position: absolute;
+            top:0;
+            right:0;
+            height:130px;
+            width:267px;
+            text-align: center;
+            box-sizing: border-box;
+            padding:20px 0;
+        }
+        h4{
+            color: #444;
+            margin-bottom:20px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .samll{
+            font-size:12px;
+            color: #777;
+        }
+        ul{
+            font-size:14px;
+            font-weight:400;
+            color: #555;
+            list-style:none;
+        }
+        ul li{
+            line-height: 1.5em;
+        }
+
+        .time-style{
+            position: absolute;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: #999;
+        }
+        .item6-time{
+            top:350px;
+            right:500px;
+        }
+        .item5-time{
+            top:650px;
+            left:500px;
+        }
+        .item5-content{
+            height:130px;
+            width:400px;
+            background:#eee;
+            position: absolute;
+            top:620px;
+            right:500px;
+            border-radius:30px 0;
+
+        }
+        .item5-content img{
+            position: absolute;
+            top:0;
+            right:0;
+            height:130px;
+            width:130px;
+            border-left:3px solid #fff;
+            border-radius: 0 0 30px;
+        }
+        .item5-content-l{
+            position: absolute;
+            top:0;
+            left:0;
+            height:130px;
+            width:267px;
+            text-align: center;
+            box-sizing: border-box;
+            padding:20px 0;
+
+        }
+        .item4-content{
+            height:130px;
+            width:400px;
+            background:#eee;
+            position: absolute;
+            top:820px;
+            left:500px;
+            border-radius:0 30px;
+        }
+        .item4-content img{
+            position: absolute;
+            top:0;
+            left:0;
+            height:130px;
+            width:130px;
+            border-left:3px solid #fff;
+            border-radius: 0 0 0 30px;
+        }
+        .item4-content-r{
+            position: absolute;
+            top:0;
+            right:0;
+            height:130px;
+            width:267px;
+            text-align: center;
+            box-sizing: border-box;
+            padding:20px 0;
+        }
+        .item4-time{
+            top:850px;
+            right:500px;
+        }
+        .item3-time{
+            top:1200px;
+            left:500px;
+        }
+        .item3-content{
+
+            width:400px;
+            background:#eee;
+            position: absolute;
+            top:1170px;
+            right:500px;
+            border-radius:30px 0;
+        }
+        .item3-content img{
+            position: absolute;
+            top:0;
+            right:0;
+            height:130px;
+            width:130px;
+            border-left:3px solid #fff;
+            border-radius: 0 0 30px;
+        }
+        .item3-content-l{
+            position: absolute;
+            top:0;
+            left:0;
+            width:267px;
+            text-align: center;
+            box-sizing: border-box;
+            padding:20px 0;
+            background:#eee;
+            border-radius: 30px 0 30px 30px;
+
+        }
+
+
+
+
+
+
+
+
+
+
+        .item2-time{
+            top:1850px;
+            right:500px;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div class="bg"></div>
+    <div class="wrap">
+        <img src="https://monkeytricks.github.io/images/chenli1.jpg" class="nav"></img>
+        <div class="line">
+            <div class="point item6"></div>
+            <div class="point item5"></div>
+            <div class="point item4"></div>
+            <div class="point item3"></div>
+            <div class="point item2"></div>
+            <div class="point item1"></div>
+            <div class="point item0"></div>
+        </div>
+        <div class="item6-content">
+            <img src="images/chenli-item6.jpg" alt="">
+            <div class="item6-content-r">
+                <h4>戏台<span class="samll">（新世相 青春版《红楼梦》主题曲）</span></h4>
+                <ul>
+                    <li>戏台 作曲：陈粒 作词：李天</li>
+                </ul>
+            </div>
+        </div>
+        <p class="item6-time time-style">2017-02-22</p>
+        <div class="item5-content">
+            <img src="images/chenli-item5.jpg" alt="">
+            <div class="item5-content-l">
+                <h4>周游</h4>
+                <ul>
+                    <li>周游 作曲：陈粒 作词：陈粒</li>
+                </ul>
+            </div>
+        </div>
+        <p class="item5-time time-style">2016-12-26</p>
+        <div class="item4-content">
+            <img src="images/chenli-item4.jpg" alt="">
+            <div class="item4-content-r">
+                <h4>当我在这里<span class="samll">（电影《我在故宫修文物》主题曲）</span></h4>
+                <ul>
+                    <li>当我在这里 作曲：陈粒 作词：姚谦</li>
+                </ul>
+            </div>
+        </div>
+        <p class="item4-time time-style">2016-11-23</p>
+        <div class="item3-content">
+            <img src="images/chenli-item3.jpg" alt="">
+            <div class="item3-content-l">
+                <h4>小梦大半</h4>
+                <ul class="m-list">
+                    <li>芳草地 </li>
+                    <li>怪不得</li>
+                    <li>小半</li>
+                    <li>桥豆麻袋</li>
+                    <li>任朝暮</li>
+                    <li>大梦</li>
+                    <li>自渡 </li>
+                    <li>虚拟</li>
+                    <li>睡吧</li>
+                </ul>
+            </div>
+        </div>
+        <p class="item3-time time-style">2016-07-26</p>
+        <p class="item2-time time-style">2015-11-11</p>
+    </div>
+</div>
+
+</body>
+</html>
