@@ -8,12 +8,17 @@
             margin:0;
             padding:0;
         }
-        body{
-            /*background: #000;*/
+        a{
+            color: #555;
+            text-decoration:none;
         }
-        #main{
-            position:relative;
+        img{
+            position: absolute;
+            top:0;
+            height:130px;
+            width:130px;
         }
+
         .bg{
             position:absolute;
             top:0;
@@ -26,9 +31,7 @@
             position:absolute;
             top:150px;
             left:calc(50% - 455px);
-            
             width:910px;
-            /*background: #fff;*/
         }
         .nav{
             position: absolute;
@@ -37,19 +40,19 @@
             height:250px;
             width:250px;
             border:10px solid #fff;
-
             border-radius: 50%;
             background:#7c8ca3;
         }
         .line{
             position: absolute;
             top:300px;
-            left:calc(50% - 7px);
-            height:3000px;
+            left:calc(50% - 4px);
+            height:2500px;
             width:8px;
             background: #fff;
             border:7px solid #eee;
             border-radius: 20px;
+            margin-bottom:100px;
         }
         .point{
             position: absolute;
@@ -79,12 +82,15 @@
         .item2{
             top:1500px;
         }
-        .item1{
+        .item0{
             top:2000px;
         }
-        .item0{
-            top:2600px;
+        .item1{
+            top:2350px;
         }
+
+
+
         .item6-content{
             height:130px;
             width:400px;
@@ -97,14 +103,22 @@
         .item6-content img{
             border-radius:0 0 0 30px;
             border-right:3px solid #fff;
-            position: absolute;
-            top:0;
             left:0;
         }
-        .item6-content-r{
+        .content-r{
             position: absolute;
             top:0;
             right:0;
+            height:130px;
+            width:267px;
+            text-align: center;
+            box-sizing: border-box;
+            padding:20px 0;
+        }
+        .content-l{
+            position: absolute;
+            top:0;
+            left:0;
             height:130px;
             width:267px;
             text-align: center;
@@ -129,7 +143,7 @@
             list-style:none;
         }
         ul li{
-            line-height: 1.5em;
+            line-height: 1.8em;
         }
 
         .time-style{
@@ -158,25 +172,11 @@
 
         }
         .item5-content img{
-            position: absolute;
-            top:0;
             right:0;
-            height:130px;
-            width:130px;
             border-left:3px solid #fff;
             border-radius: 0 0 30px;
         }
-        .item5-content-l{
-            position: absolute;
-            top:0;
-            left:0;
-            height:130px;
-            width:267px;
-            text-align: center;
-            box-sizing: border-box;
-            padding:20px 0;
 
-        }
         .item4-content{
             height:130px;
             width:400px;
@@ -187,24 +187,11 @@
             border-radius:0 30px;
         }
         .item4-content img{
-            position: absolute;
-            top:0;
             left:0;
-            height:130px;
-            width:130px;
-            border-left:3px solid #fff;
+            border-right:3px solid #fff;
             border-radius: 0 0 0 30px;
         }
-        .item4-content-r{
-            position: absolute;
-            top:0;
-            right:0;
-            height:130px;
-            width:267px;
-            text-align: center;
-            box-sizing: border-box;
-            padding:20px 0;
-        }
+
         .item4-time{
             top:850px;
             right:500px;
@@ -223,11 +210,7 @@
             border-radius:30px 0;
         }
         .item3-content img{
-            position: absolute;
-            top:0;
             right:0;
-            height:130px;
-            width:130px;
             border-left:3px solid #fff;
             border-radius: 0 0 30px;
         }
@@ -240,65 +223,129 @@
             box-sizing: border-box;
             padding:20px 0;
             background:#eee;
-            border-radius: 30px 0 30px 30px;
+            border-radius: 30px 0 30px 0;
 
         }
-
-
-
-
-
-
-
-
-
+        .item2-content{
+            height:130px;
+            width:400px;
+            background:#eee;
+            position: absolute;
+            top:1820px;
+            left:500px;
+            border-radius:0 30px ;
+        }
+        .item2-content img{
+            left:0;
+            border-right:3px solid #fff;
+            border-radius: 0 0 0 30px;
+        }
 
         .item2-time{
             top:1850px;
             right:500px;
         }
+        .item0-content{
+            width:400px;
+            background:#eee;
+            position: absolute;
+            top:2320px;
+            right:500px;
+            border-radius: 30px 0;
+        }
+        .item0-content img{
+            right:0;
+            border-left: 3px solid #fff;
+            border-radius:0 0 30px 0;
+        }
+        .item0-content-l{
+            position: absolute;
+            top:0;
+            left:0;
+            width:267px;
+            text-align: center;
+            box-sizing: border-box;
+            padding:20px 0;
+            background: #eee;
+            border-radius: 30px 0 30px 0;
+        }
+        .item0-time{
+            top:2350px;
+            left:500px;
+        }
+        .item1-content{
+            width:400px;
+            background:#eee;
+            position: absolute;
+            top:2670px;
+            left:500px;
+            border-radius: 30px 0;
+        }
+        .item1-content img{
+            left:0;
+            border-right: 3px solid #fff;
+            border-radius:0 0  0 30px;
+        }
+        .item1-content-l{
+            position: absolute;
+            top:0;
+            right:0;
+            width:267px;
+            text-align: center;
+            box-sizing: border-box;
+            padding:20px 0;
+            background: #eee;
+            border-radius: 0 30px;
+        }
+
+        .item1-time{
+            top:2600px;
+            right:500px;
+        }
     </style>
 </head>
 <body>
-<div id="main">
     <div class="bg"></div>
     <div class="wrap">
-        <img src="https://monkeytricks.github.io/images/chenli1.jpg" class="nav"></img>
+        <img src="https://monkeytricks.github.io/images/chenli1.jpg" class="nav">
         <div class="line">
             <div class="point item6"></div>
             <div class="point item5"></div>
             <div class="point item4"></div>
             <div class="point item3"></div>
             <div class="point item2"></div>
-            <div class="point item1"></div>
             <div class="point item0"></div>
+            <div class="point item1"></div>
         </div>
         <div class="item6-content">
             <img src="https://monkeytricks.github.io/images/chenli-item6.jpg" alt="">
-            <div class="item6-content-r">
+            <div class="content-r">
                 <h4>戏台<span class="samll">（新世相 青春版《红楼梦》主题曲）</span></h4>
                 <ul>
-                    <li>戏台 作曲：陈粒 作词：李天</li>
+                    <li><a href="http://music.163.com/#/song?id=461301042">戏台 作曲：陈粒 作词：李天</a></li>
+
                 </ul>
             </div>
         </div>
         <p class="item6-time time-style">2017-02-22</p>
         <div class="item5-content">
             <img src="https://monkeytricks.github.io/images/chenli-item5.jpg" alt="">
-            <div class="item5-content-l">
+            <div class="content-l">
                 <h4>周游</h4>
                 <ul>
-                    <li>周游 作曲：陈粒 作词：陈粒</li>
+                    <li> <a href="http://music.163.com/#/song?id=447925710">周游 作曲：陈粒 作词：陈粒</a></li>
+
                 </ul>
             </div>
         </div>
         <p class="item5-time time-style">2016-12-26</p>
         <div class="item4-content">
             <img src="https://monkeytricks.github.io/images/chenli-item4.jpg" alt="">
-            <div class="item4-content-r">
+            <div class="content-r">
                 <h4>当我在这里<span class="samll">（电影《我在故宫修文物》主题曲）</span></h4>
                 <ul>
-                    <li>当我在这里 作曲：陈粒 作词：姚谦</li>
+                    <li><a href="http://music.163.com/#/song?id=442315773">当我在这里 作曲：陈粒 作词：姚谦</a></li>
+
                 </ul>
             </div>
         </div>
@@ -308,22 +355,66 @@
             <div class="item3-content-l">
                 <h4>小梦大半</h4>
                 <ul class="m-list">
-                    <li>芳草地 </li>
-                    <li>怪不得</li>
-                    <li>小半</li>
-                    <li>桥豆麻袋</li>
-                    <li>任朝暮</li>
-                    <li>大梦</li>
-                    <li>自渡 </li>
-                    <li>虚拟</li>
-                    <li>睡吧</li>
+                    <li><a href="http://music.163.com/#/song?id=421563711">芳草地</a> </li>
+                    <li><a href="http://music.163.com/#/song?id=421563712">怪不得</a></li>
+                    <li><a href="http://music.163.com/#/song?id=421423806">小半</a></li>
+                    <li><a href="http://music.163.com/#/song?id=421563713">桥豆麻袋</a></li>
+                    <li><a href="http://music.163.com/#/song?id=421563714">任朝暮</a></li>
+                    <li><a href="http://music.163.com/#/song?id=421423807">大梦</a></li>
+                    <li><a href="http://music.163.com/#/song?id=421563715">自渡</a> </li>
+                    <li><a href="http://music.163.com/#/song?id=421563717">虚拟</a></li>
+                    <li><a href="http://music.163.com/#/song?id=421423808">睡吧</a></li>
                 </ul>
             </div>
         </div>
         <p class="item3-time time-style">2016-07-26</p>
+        <div class="item2-content">
+            <img src="https://monkeytricks.github.io/images/chenli-item2.jpg" alt="">
+            <div class="content-r">
+                <h4>爱若</h4>
+                <ul>
+                    <li> <a href="http://music.163.com/#/song?id=36308884">爱若 作曲：陈粒 作词：何飞</a></li>
+                </ul>
+            </div>
+        </div>
         <p class="item2-time time-style">2015-11-11</p>
+        <div class="item0-content">
+            <img  src="https://monkeytricks.github.io/images/chenli-item0.jpg" alt="">
+            <div class="item0-content-l">
+                <h4>单曲</h4>
+                <ul class="m-list">
+                    <li><a href="http://music.163.com/#/song?id=33525647">远辰</a> </li>
+                    <li><a href="http://music.163.com/#/song?id=31789055">不妙</a></li>
+                    <li><a href="http://music.163.com/#/song?id=29753832">祝星</a></li>
+                    <li><a href="http://music.163.com/#/song?id=29812654">没完</a></li>
+                    <li><a href="http://music.163.com/#/song?id=30051774">性空山</a> </li>
+                    <li><a href="http://music.163.com/#/song?id=29979822">妙龄童</a></li>
+                    <li><a href="http://music.163.com/#/song?id=30431367">走马</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="item0-time time-style">2015-03-25</p>
+        <div class="item1-content">
+            <img  src="https://monkeytricks.github.io/images/chenli-item1.jpg" alt="">
+            <div class="item1-content-l">
+                <h4>如也</h4>
+                <ul class="m-list">
+                    <li><a href="http://music.163.com/#/song?id=30431365">不灭</a> </li>
+                    <li><a href="http://music.163.com/#/song?id=30431374">如也</a></li>
+                    <li><a href="http://music.163.com/#/song?id=30431366">奇妙能力歌</a></li>
+                    <li><a href="http://music.163.com/#/song?id=30431375">万历年乡</a></li>
+                    <li><a href="http://music.163.com/#/song?id=30431364">光</a></li>
+                    <li><a href="http://music.163.com/#/song?id=30431378">贪得</a></li>
+                    <li><a href="http://music.163.com/#/song?id=30431373">七楼</a> </li>
+                    <li><a href="http://music.163.com/#/song?id=30431376">易燃易爆站</a></li>
+                    <li><a href="http://music.163.com/#/song?id=30431377">绝对占有，绝对自由</a></li>
+                    <li><a href="http://music.163.com/#/song?id=30431369">脱缰</a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="item1-time time-style">2015-02-02</p>
     </div>
-</div>
+
 
 </body>
 </html>
