@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件委托</title>
+</head>
+<body>
+    <ul id="shoppingList">
+        <li class="complete"><a href="iTemdone.php?id=1"><em>fresh</em>figs</a></li>
+        <li class="complete"><a href="iTemdone.php?id=2">pine nuts</a></li>
+        <li class="complete"><a href="iTemdone.php?id=3">honey</a></li>
+        <li class="complete"><a href="iTemdone.php?id=4">balsamic vinegar</a></li>
+    </ul>
+    <script>
+        function getTarget(e){
+            if(!e){
+                e = window.event;
+            }else{
+               return e.target || e.srcElement;
+            }
+        }
+        //创建三个变量分别获取li的父元素，祖先元素。移除这个元素；
+        function itemDone(e) {
+            var target,elParent,elGrandparent;
+            target = getTarget(e);
+            elParent = target.parentNode;
+            elGrandparent = target.parentNode.parentNode;
+            elGrandparent.removeChild(elParent);
+
+            if(e.preventDefault){
+                e.preventDefault();
+            }else{
+                e.returnValue = false;
+            }
+
+        }
+        //获取shoppingList
+        var el = document.getElementById('shoppingList');
+        if(el.addEventListener){
+            el.addEventListener('click',function (e) {
+                itemDone(e);
+            },false)
+            }else{
+                attachEvent('onclick',function(e){
+                    itemDone(e);
+                });
+        }//添加事件监听器
+
+
+    </script>
+</body>
+</html>
