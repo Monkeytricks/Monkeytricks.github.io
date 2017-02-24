@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="js/jquery-3.1.1.min.js"></script>
     <style>
         p {
             text-align: center;
         }
-        #contianer {
+        #container {
             position: relative;
             width: 1000px;
             height: 500px;
@@ -16,10 +17,12 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        #contianer div {
+        #container div {
             position: absolute;
+            font-size:18px;
+            font-weight:600;
         }
-        #txt {
+        #text {
             width: 300px;
             padding: 5px;
             border: 1px solid #999;
@@ -34,40 +37,82 @@
     </style>
 </head>
 <body>
-<div id="contianer">
+<div id="container">
 </div>
-<p><input type="text" id="txt"></p>
+<p><input type="text" id="text" value="fase"></p>
 <p>
     <button id="pop" class="btn">发射</button>
-    <button id="clearPop" class="btn">清屏</button>
+    <button id="clear" class="btn">清屏</button>
 </p>
 <script>
-    var ctn = document.getElementById('contianer');
-    var txt = document.getElementById('txt');
-    var pop = document.getElementById('pop');
-    var clear = document.getElementById('clearPop');
+    $(function () {
+        var $container = $("#container");
+        var top=0,left = 0;
+        var Date =[];
 
-    pop.onclick = function(){
-        if(txt.value != ''){
-            var oDiv = document.createElement('div');
-            oDiv.style.left = getComputedStyle(ctn).width;
-            oDiv.innerHTML = txt.value;
-            ctn.appendChild(oDiv);
-            oDiv.times = 100;
-            move(oDiv);
+        $("#pop").click(function () {
+                var text = $("#text").val();
+                if(text == ""){
+                    return false;
+                }
+                var _label =$("<div  style='right:20px;top:0;opacity:1;color:"+getRandomColor()+";' >"+text+"</div>");
+                $container.append(_label);
+                init_barrage();
+
+        });
+
+
+        $("#clear").click(function () {
+            console.log(Date);
+            Date.splice(0,Date.length);
+            console.log(Date);
+        });
+
+
+        //初始化弹幕
+        function init_barrage() {
+            $("#container div:last-child").show().each(
+                    function () {
+                        var me = this;
+                        showBar();
+                        //显示弹幕
+                        function showBar() {
+                            var height = $container.height();
+                            top += 75;
+                            if (top >= (height - 30)) {
+                                top = 0;
+                            }
+                            var time = 4000;
+                            $(me).css({top: top});
+                            if ($(me).index() % 2 == 0) {
+                                time = 5000;
+                            }
+                            $(me).animate({
+                                left: "-" + left + "px"
+
+                            }, time, function () {
+                                $(me).hide();
+                                Date.push($(this));
+
+                            })
+                        }
+                    }
+            );
+
         }
-    }
-    function move(obj){
-        obj.timer = setInterval(function(){
-            obj.style.left = parseInt(obj.style.left) - 1 + 'px';
-            if(obj.times>10) obj.times-=2;
-            clearInterval(obj.timer);
-            move(obj);
-        },obj.times);
-    }
-    clear.onclick = function(){
-        ctn.innerHTML = '';
-    }
+
+
+
+
+
+
+        //获取随机颜色
+        function getRandomColor() {
+           return  "#"+(Math.random()*0x1000000<<0).toString(16).substr(-6);
+        }
+
+
+    });
 </script>
 </body>
 </html>
