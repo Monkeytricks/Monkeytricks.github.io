@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义checkbox， radio样式tle</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background:#555;
+            -moz-user-select:none;/*火狐*/
+
+            -webkit-user-select:none;/*webkit浏览器*/
+
+            -ms-user-select:none;/*IE10*/
+
+            -khtml-user-select:none;/*早期浏览器*/
+
+            user-select:none;
+        }
+
+
+        input{
+          display: none;
+        }
+        #radio,#checkbox{
+            display:block;
+            height:30px;
+            width:150px;
+            line-height:30px;
+            border-radius:20px;
+            text-align: center;
+            background-color: #fff;
+            background-image: url(../images/baidu-radioSprite.png);
+            background-repeat: no-repeat;
+        }
+        #radio{
+            margin:100px auto 20px auto;
+            background-position: 5px 5px;
+
+        }
+        #checkbox{
+            margin:20px auto;
+            background-position: 5px -19px;
+        }
+        #User:checked+#radio {
+            background-position: 5px -44px;
+        }
+        #check:checked+#checkbox{
+            background-position: 5px -69px;
+        }
+    </style>
+</head>
+<body>
+        <input type="radio" id="User" name="radio" onclick="setSelectUserNo(this)">
+        <label for="User" id="radio">
+            瞅我干啥？
+        </label>
+        <input type="checkbox" id="check" name="checkbox">
+        <label for="check" id="checkbox">
+            瞅你咋地？
+        </label>
+
+</body>
+</html>
