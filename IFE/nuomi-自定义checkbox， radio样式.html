@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义checkbox， radio样式tle</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background:#555;
+            -moz-user-select:none;/*火狐*/
+
+            -webkit-user-select:none;/*webkit浏览器*/
+
+            -ms-user-select:none;/*IE10*/
+
+            -khtml-user-select:none;/*早期浏览器*/
+
+            user-select:none;
+        }
+
+
+        input{
+          display: none;
+        }
+        .radio,.checkbox{
+            display:block;
+            height:30px;
+            width:150px;
+            line-height:30px;
+            border-radius:20px;
+            text-align: center;
+            background-color: #fff;
+            background-image: url(../images/baidu-radioSprite.png);
+            background-repeat: no-repeat;
+            margin:20px auto;
+        }
+        .radio{
+
+            background-position: 5px 5px;
+
+        }
+        .checkbox{
+
+            background-position: 5px -19px;
+        }
+        input[type=radio]:checked+.radio {
+            background-position: 5px -44px;
+        }
+        input[type=checkbox]:checked+.checkbox{
+            background-position: 5px -69px;
+        }
+    </style>
+</head>
+<body>
+<form id="form">
+    <input type="radio" id="User1" name="radio">
+    <label for="User1" class="radio">
+        单选框
+    </label>
+    <input type="radio" id="User2" name="radio">
+    <label for="User2" class="radio">
+        单选框
+    </label>
+    <input type="checkbox" id="checkOne" name="checkbox">
+    <label for="checkOne" class="checkbox">
+        复选框1
+    </label>
+    <input type="checkbox" id="checkTwo" name="checkbox">
+    <label for="checkTwo" class="checkbox">
+        复选框2
+    </label>
+</form>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仿豆瓣音乐播放器</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        #wrap{
+            position: relative;
+            margin:10px auto;
+            height:260px;
+            width:700px;
+            background: #eee;
+            border-radius: 20px;
+            box-shadow: 3px 3px 5px #ccc;
+        }
+        .circle{
+            position: absolute;
+            left:30px;
+            bottom:20px;
+
+            height:200px;
+            width:200px;
+            background:url(../images/baidu-audio.png) 0/cover;
+            border-radius: 50%;
+            animation: circle 10s infinite linear;
+
+
+
+        }
+        .circle .circleInside{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+            z-index: -1;
+            width:80px;
+            height:80px;
+            background:url(../images/chenli-item2.jpg) 0/cover;
+        }
+
+        /*按钮*/
+        .glyphicon{
+            font-size: 26px;
+        }
+        #wrap p{
+            position: absolute;
+            bottom:10px;
+        }
+
+        .trash{
+            right:30px;
+        }
+        .heart{
+            right:100px;
+        }
+
+        .backward{
+            right:380px;
+        }
+        .play{
+            right:300px;
+        }
+        .pause{
+            right:300px;
+            visibility: hidden;
+        }
+        .forward{
+            right:220px;
+        }
+
+        .line{
+            width:400px;
+            height:2px;
+            position: absolute;
+            bottom:100px;
+            right:40px;
+            border-radius:2px;
+            background: #2da753;
+        }
+        h6,small{
+            position: absolute;
+        }
+        h6{
+            top:20px;
+            right:30px;
+            font-size: 24px;
+        }
+        small{
+            font-size: 18px;
+            top:65px;
+            right:30px;
+        }
+
+
+        @keyframes circle {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform:rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap" >
+        <div class="circle">
+            <div class="circleInside"></div>
+        </div>
+        <h6>奇妙能力歌</h6><small>陈粒</small>
+        <div class="line"></div>
+        <p class="heart" ><span class="glyphicon glyphicon-heart"></span></p>
+        <p class="trash"><span class="glyphicon glyphicon-trash"></span></p>
+        <p class="backward"><span class="glyphicon glyphicon-backward"></span></p>
+        <p class="play"><span class="glyphicon glyphicon-play"></span></p>
+        <p class="pause"><span class="glyphicon glyphicon-pause"></span></p>
+        <p class="forward"><span class="glyphicon glyphicon-forward"></span></p>
+    </div>
+    <audio src="../music/陈粒%20-%20奇妙能力歌.mp3" autoplay="autoplay">Your browser does not support the audio tag.</audio>
+
+    <script>
+        window.onload = function () {
+                    var  audio=document.querySelector('audio'),//播放器元素
+                         play = document.querySelector('.play'),
+                         backward =document.querySelector('.backward'),
+                         forward = document.querySelector('.forward') ,
+                         pause = document.querySelector('.pause');
+                //播放
+                   play.addEventListener('click',function () {
+                    audio.play();
+                   },false);
+                //暂停
+                pause.addEventListener('click',function(){
+                     audio.pause();
+                },false)
+
+
+
+        }
+    </script>
+</body>
+</html>
