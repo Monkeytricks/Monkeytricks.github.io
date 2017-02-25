@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义网页右键菜单</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        #container{
+            height: 116px;
+            line-height: 116px;
+            text-align: center;
+            font-size: 30px;
+            background:#f5f5f5;
+            margin:15px 30px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+        #C_menu{
+            width: 404px;
+            position: absolute;
+            background:#ffffff;
+            border: 2px solid #eee;
+            border-radius: 5px;
+            padding:10px 0;
+            display: none;
+            z-index: 9999;
+        }
+        #C_menu li{
+            padding:18px 40px;
+            font-size: 24px;
+        }
+        #C_menu li:hover{
+            background:#eee;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+<div id="container">点我点我点我点我点我</div>
+<ul type="context" id="C_menu">
+    <li class="menuitem" >菜单项目一</li>
+    <li class="menuitem">菜单项目二</li>
+</ul>
+<script>
+    window.onload = function () {
+            var menu = document.querySelector('#C_menu'),
+                container = document.querySelector('#container'),
+                browserHeight = window.innerHeight,
+                browserWidth = window.innerWidth;
+
+
+        document.oncontextmenu = function (e) {
+            menu.style.display = 'block';
+            var e = e || window.event,
+                    scrollTop = document.documentElement.scrollLeft || document.body.scrollLeft,
+                    scrollLeft = document.documentElement.scrollTop || document.body.scrollTop,
+                    clientX = e.clientX,
+                    clientY = e.clientY,
+                    offsetWidth = menu.offsetWidth,
+                    offsetHeight = menu.offsetHeight,
+                    top,
+                    left;
+            if(clientY+offsetHeight >= browserHeight){
+                top =clientY -offsetHeight;
+            }else{
+                top = clientY;
+            }
+
+            if(clientX+offsetWidth >= browserWidth){
+                left = clientX - offsetWidth;
+            }else{
+                left = clientX;
+            }
+            menu.style.left =scrollLeft+ left + "px";
+            menu.style.top = scrollTop + top + "px";
+            return false;
+
+        }
+
+        document.onclick = function () {
+            menu.style.display = 'none';
+        }
+
+
+
+    }
+</script>
+</body>
+</html>
