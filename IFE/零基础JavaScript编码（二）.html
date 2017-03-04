@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h3>污染城市列表</h3>
+<ul id="aqi-list">
+    <!--
+        <li>第一名：福州（样例），10</li>
+          <li>第二名：福州（样例），10</li> -->
+</ul>
+
+<script type="text/javascript">
+
+    var aqiData = [
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100]
+    ];
+
+    (function () {
+
+        /*
+         在注释下方编写代码
+         遍历读取aqiData中各个城市的数据
+         将空气质量指数大于60的城市显示到aqi-list的列表中
+         */
+        var aqiList = document.querySelector('#aqi-list');
+        var listData = [];//用来存放大于60的城市
+        for(var i=0,len = aqiData.length; i< len;i++){
+            var number = aqiData[i][1];//读取每个城市的数据
+            if(number > 60){
+                listData.push(aqiData[i]);//大于60则将其添加到listData数组中
+            }
+        }
+        listData.sort();//从小到大排序数组
+        for(var j =0 ,ListDataLen=listData.length;j<ListDataLen;j++){
+            var ele  = document.createElement("li"),//创建一个li元素
+                    nodeText = document.createTextNode("第"+ (j+1)+"名:"+listData[ListDataLen - (j+1)]);//创建一个文本节点
+            ele.appendChild(nodeText);//将其添加到ele下面
+            aqiList.appendChild(ele);//将ele元素添加到aqiList下面
+        }
+    })();
+
+</script>
+</body>
+</html>
